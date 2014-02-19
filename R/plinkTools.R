@@ -55,6 +55,7 @@ combineAssocFiles <- function(out, dir  = "./",
   for (ff in files) {
     phen <- gsub(paste(prepend, extension, sep="|"), "", ff)
     lines <- readLines(ff)[-1] # ignore header
+    if (length(lines) == 0 ) { next } # skip to next loop if there are no SNPs
     fields <- strsplit(lines, "\\s+")
     fields <- lapply(fields, function(x) { c(phen, x[x != ""]) })
     newLines <- lapply(fields, paste, collapse="\t")
