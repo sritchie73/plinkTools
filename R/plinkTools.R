@@ -19,7 +19,7 @@
 #' See \code{\link{combineAssocFiles}}
 #' 
 #' @author 
-#' Scott Ritchie <sritchie73@gmail.com>
+#' Scott Ritchie \email{sritchie73@@gmail.com}
 #' 
 #' @rdname plinkTools-package
 #' 

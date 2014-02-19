@@ -16,6 +16,6 @@
   \code{\link{combineAssocFiles}}
 }
 \author{
-  Scott Ritchie <sritchie73
+  Scott Ritchie \email{sritchie73@gmail.com}
 }
 
