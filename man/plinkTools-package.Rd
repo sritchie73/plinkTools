@@ -1,0 +1,21 @@
+\docType{package}
+\name{plinkTools-package}
+\alias{plinkTools}
+\alias{plinkTools-package}
+\title{Tools for processing plink data}
+\description{
+  This R package provides supplementary tools for dealing
+  with the output from the bioinformatics program,
+  \code{plink}. See:
+  \link{http://pngu.mgh.harvard.edu/~purcell/plink}
+}
+\details{
+  \tabular{ll}{ Package: \tab plinkTools\cr Type: \tab
+  Package\cr Version: \tab 1.0\cr Date: \tab 2014-02-19\cr
+  License: \tab GPL (>= 2)\cr } See
+  \code{\link{combineAssocFiles}}
+}
+\author{
+  Scott Ritchie <sritchie73
+}
+
