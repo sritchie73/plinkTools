@@ -2,9 +2,8 @@
 \alias{combineAssocFiles}
 \title{Combine Multiple Association tests into one file}
 \usage{
-  combineAssocFiles(out, dir = "./", prepend = "plink.",
-    extension = ".assoc.linear", sep = "\t",
-    removeFiles = TRUE)
+combineAssocFiles(out, dir = "./", prepend = "plink.",
+  extension = ".assoc.linear", sep = "\\t", removeFiles = TRUE)
 }
 \arguments{
   \item{out}{The output file to store the combined results
@@ -28,9 +27,9 @@
   been combined.}
 }
 \description{
-  When running association tests for multiple phenotypes,
-  \code{plink} creates one file for each phenotype. This
-  function combines them into one file, and puts the output
-  into a nicely separated file.
+When running association tests for multiple phenotypes,
+\code{plink} creates one file for each phenotype. This
+function combines them into one file, and puts the output
+into a nicely separated file.
 }
 
