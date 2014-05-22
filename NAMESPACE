@@ -2,3 +2,4 @@
 
 export(combineAssocFiles)
 export(loadPed)
+export(maf_from_dosage)

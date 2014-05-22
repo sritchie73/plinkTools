@@ -65,3 +65,15 @@ combineAssocFiles <- function(out, dir  = "./",
     sapply(paste("rm", file.path(dir, files)), system)
   }
 }
+
+#' Calculate Minor Allele Frequency from dosage levels
+#' 
+#' Useful for calculating the MAF for subsets of individuals
+#' 
+#' @param x vector of dosages as given by `loadPed`.
+#' @return the frequency of a minor allele in your vector.
+#' @export
+maf_from_dosage <- function(x) {
+  dosage_count <- table(x)
+  (dosage_count["1"] + 2*dosage_count["2"]) / (2 * length(x))
+}
