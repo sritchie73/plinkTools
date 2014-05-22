@@ -45,16 +45,16 @@ combineAssocFiles <- function(out, dir  = "./",
                               prepend   = "plink.",
                               extension = ".assoc.linear", 
                               sep       = "\t",
-                              removeFiles = TRUE) {
-  files <- grep(extension, list.files(), value=TRUE)
-  fields <- strsplit(readLines(files[1], 1), "\\s+")[[1]]
+                              removeFiles = FALSE) {
+  files <- list.files(path=dir, pattern=paste0(extension, "$"))
+  fields <- strsplit(readLines(file.path(dir, files[1]), 1), "\\s+")[[1]]
   fields <- fields[fields != ""]
   
   cat("PHEN\t", paste(fields, collapse="\t"), "\n", sep="", file=out)
   
   for (ff in files) {
     phen <- gsub(paste(prepend, extension, sep="|"), "", ff)
-    lines <- readLines(ff)[-1] # ignore header
+    lines <- readLines(file.path(dri, ff))[-1] # ignore header
     if (length(lines) == 0 ) { next } # skip to next loop if there are no SNPs
     fields <- strsplit(lines, "\\s+")
     fields <- lapply(fields, function(x) { c(phen, x[x != ""]) })
@@ -62,6 +62,6 @@ combineAssocFiles <- function(out, dir  = "./",
     cat(paste(newLines, collapse="\n"), "\n", file=out, append=TRUE)
   }
   if (removeFiles) {
-    sapply(paste("rm", files), system)
+    sapply(paste("rm", file.path(dir, files)), system)
   }
 }
